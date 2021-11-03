@@ -28,3 +28,4 @@ class Personas(var nombre: String = "", var edad: Int = 0, var sexo: String = "H
 
 
 }
+https://www.develou.com/constructores-en-kotlin/
