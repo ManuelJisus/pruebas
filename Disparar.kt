@@ -29,24 +29,36 @@ class Pistola(nombre: String,municion: Int, municionARestar: Int, tipoDeMunicion
 
     override fun dispara(): Int {
 
-        municion -= (municionARestar * 1)
+        if (municion > 0)  municion -= (municionARestar * 1)
+
         return municion
     }
 
     override fun toString(): String {
-        return "El $nombre a disparado y le quedan $municion balas"
+        if (municion > 0) {
+            return "El $nombre ha disparado y le quedan $municion balas"
+        }
+        else {
+            return "El $nombre no ha disparado porque le quedan $municion balas"
+        }
     }
 }
 
 class Rifle(nombre: String,municion: Int, municionARestar: Int, tipoDeMunicion: String, danio: Int ) : ArmaDeFuego(nombre, municion, municionARestar, tipoDeMunicion, danio ){
 
     override fun dispara(): Int {
-        municion -= (municionARestar * 2)
+        if (municion > 0)  municion -= (municionARestar * 2)
+
         return municion
     }
 
     override fun toString(): String {
-        return "El $nombre a disparado y le quedan $municion balas"
+        if (municion > 0) {
+            return "El $nombre ha disparado y le quedan $municion balas"
+        }
+        else {
+            return "El $nombre no ha disparado porque le quedan $municion balas"
+        }
     }
 }
 
@@ -54,16 +66,18 @@ class Bazooka(nombre: String,municion: Int, municionARestar: Int, tipoDeMunicion
 
     override fun dispara(): Int {
         if (municion > 0)  municion -= (municionARestar * 3)
-        else {
-            println("no quedan balas")
-            
-        }
+
         return municion
     }
 
 
     override fun toString(): String {
-        return "El $nombre a disparado y le quedan $municion balas"
+        if (municion > 0) {
+            return "El $nombre ha disparado y le quedan $municion balas"
+        }
+        else {
+            return "El $nombre no ha disparado porque le quedan $municion balas"
+        }
     }
 }
 
